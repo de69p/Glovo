@@ -1,0 +1,30 @@
+package com.example.glovo.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+import java.util.List;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Order {
+
+    private Long id;
+    private Date date;
+    private Double cost;
+    private List<Product> products;
+
+    public Order(Long id, Date date, Double cost) {
+        this.id = id;
+        this.date = date;
+        this.cost = cost;
+    }
+
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+}
