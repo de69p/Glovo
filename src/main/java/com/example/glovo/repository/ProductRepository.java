@@ -27,10 +27,9 @@ public class ProductRepository {
         return (Product) jdbcTemplate.queryForObject(sql, new Object[]{id}, new ProductRowMapper());
     }
 
-    public Product createProduct(Product product) {
+    public void createProduct(Product product) {
         String sql = "INSERT INTO products (name, cost) VALUES (?, ?)";
         jdbcTemplate.update(sql, product.getName(), product.getCost());
-        return product;
     }
 
 

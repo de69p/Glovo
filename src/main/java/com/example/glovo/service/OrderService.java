@@ -18,15 +18,22 @@ public class OrderService {
     }
 
     public Order getOrderById(Long id) {
-        return orderRepository.findById(id);
+        return orderRepository.getOrderById(id);
     }
 
     public List<Order> getAllOrders() {
-        return orderRepository.findAll();
+        return orderRepository.getAllOrders();
     }
 
-    public void addOrder(Order order) {
-        orderRepository.save(order);
+    public void createOrder(Order order) {
+        orderRepository.createOrder(order);
     }
 
+    public void updateOrder(Long id, Order order) {
+        orderRepository.updateOrder(id, order);
+    }
+
+    public void deleteOrder(Long id) {
+        orderRepository.deleteOrder(id);
+    }
 }
